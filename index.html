@@ -19,17 +19,13 @@
     }
   </script>
 </head>
-<!-- Lock the body from scrolling so the internal drawer handles it -->
 <body class="transition-colors duration-300 bg-base-100 overflow-hidden">
 
-  <!-- Set the drawer wrapper to exactly 100% dynamic viewport height -->
   <div class="drawer lg:drawer-open h-[100dvh]">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     
-    <!-- Content Area: This is where the actual scrolling happens now -->
     <div class="drawer-content flex flex-col h-[100dvh] overflow-y-auto overflow-x-hidden scroll-smooth">
       
-      <!-- Navbar (Mobile First) -->
       <div class="w-full flex justify-between items-center p-3 sm:p-4 bg-base-200 lg:bg-transparent lg:hidden sticky top-0 z-50 backdrop-blur-sm bg-opacity-90 border-b border-base-300 lg:border-none shadow-sm">
         <div class="flex-none">
           <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
@@ -37,21 +33,18 @@
           </label>
         </div>
         <div class="flex-1 px-2 mx-2 text-lg sm:text-xl font-bold text-center">Sem 3 Hub</div>
-        <div class="flex-none w-12"></div> <!-- Spacer for perfect center alignment -->
-      </div>
+        <div class="flex-none w-12"></div> </div>
 
-      <!-- Main Content -->
       <main class="flex-grow p-4 sm:p-6 md:p-8 lg:p-10 max-w-7xl mx-auto w-full">
         
-        <!-- SECTION: DASHBOARD -->
         <section id="dashboard" class="mb-12 md:mb-16 scroll-mt-24">
-          <h1 class="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-base-content">Dashboard</h1>
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-base-content break-words">Dashboard</h1>
           
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             
             <div class="card bg-base-100 shadow-xl border border-base-200">
               <div class="card-body p-6">
-                <h2 class="card-title text-xl text-primary">⚙️ Core Headquarters</h2>
+                <h2 class="card-title text-xl text-primary break-words">⚙️ Core Headquarters</h2>
                 <p class="text-base text-base-content/80">Skip the noise and jump straight into the survival kits for Solid Mechanics, Thermodynamics, and Fluid Dynamics.</p>
                 <div class="card-actions justify-end mt-4">
                   <a href="#mech-resources" class="btn btn-primary w-full sm:w-auto">Go to Mech Resources</a>
@@ -61,7 +54,7 @@
 
             <div class="card bg-neutral text-neutral-content shadow-xl">
               <div class="card-body p-6">
-                <h2 class="card-title text-xl">📬 Got Feedback?</h2>
+                <h2 class="card-title text-xl break-words">📬 Got Feedback?</h2>
                 <p class="text-base text-neutral-content/80">Found a broken link? Have better notes? Or just want to yell about Navier-Stokes? Send a strongly worded email.</p>
                 <div class="card-actions justify-end mt-4">
                   <button onclick="sendFeedback()" class="btn btn-secondary w-full sm:w-auto">Send Feedback</button>
@@ -71,30 +64,27 @@
           </div>
         </section>
 
-        <!-- DIVIDER -->
-        <div class="divider my-10 md:my-16 text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center px-2 break-words">
+        <div class="divider my-10 md:my-16 text-lg sm:text-2xl md:text-3xl font-bold text-primary text-center px-2 break-words leading-tight text-balance">
           IITB Mech Sem 3: The Grand Unified Portal
         </div>
         
-        <!-- The Modi & Motivation Hero Section -->
         <div class="hero bg-gradient-to-br from-warning to-error text-warning-content rounded-2xl shadow-xl mb-12 md:mb-16 overflow-hidden">
-          <div class="hero-content text-center py-10 md:py-12 px-4">
+          <div class="hero-content text-center py-10 md:py-12 px-4 w-full">
             <div class="max-w-2xl">
-              <h2 class="text-2xl md:text-3xl font-extrabold mb-4 leading-tight">🔥 Vision 2026: Mitron, Study Hard!</h2>
-              <p class="text-base md:text-lg opacity-90">Inaugurating the Sem 3 grind with the discipline of a Prime Minister and the raw power of Sunil Shetty in the gym. No backlogs, only development.</p>
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-4 leading-tight break-words text-balance">🔥 Vision 2026: Mitron, Study Hard!</h2>
+              <p class="text-sm sm:text-base md:text-lg opacity-90">Inaugurating the Sem 3 grind with the discipline of a Prime Minister and the raw power of Sunil Shetty in the gym. No backlogs, only development.</p>
             </div>
           </div>
         </div>
 
-        <!-- SECTION 1: MECH RESOURCES (Kept exactly the same) -->
         <section id="mech-resources" class="mb-12 md:mb-16 scroll-mt-24">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2 break-words text-balance">
             ⚙️ Mech Resources
           </h2>
 
           <div class="card bg-base-200 shadow-sm mb-6 border border-base-300">
             <div class="card-body p-5 md:p-6">
-              <h3 class="card-title text-lg mb-2">📚 Recommended Books Library</h3>
+              <h3 class="card-title text-lg mb-2 break-words">📚 Recommended Books Library</h3>
               <p class="text-sm opacity-75 mb-4">Standard texts for surviving the semester without losing your sanity.</p>
               <div class="flex flex-wrap gap-2">
                 <div class="badge badge-primary badge-outline p-3 text-xs sm:text-sm">Callister (Materials)</div>
@@ -129,7 +119,7 @@
           <div class="card bg-base-100 shadow-xl border-t-4 border-primary mb-6">
             <div class="card-body p-4 sm:p-6 md:p-8">
               <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-6">
-                <h2 class="card-title text-xl sm:text-2xl text-primary">Semester 3 Files</h2>
+                <h2 class="card-title text-lg sm:text-xl md:text-2xl text-primary break-words text-balance">Semester 3 Files</h2>
                 <span class="badge badge-success shrink-0">Active</span>
               </div>
               <p class="mb-6 text-sm md:text-base text-base-content/80">Click on a course below to access the materials.</p>
@@ -138,7 +128,7 @@
                 
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="sem3-accordion" checked="checked" /> 
-                  <div class="collapse-title text-base sm:text-lg font-medium pr-10">ME209: Thermodynamics</div>
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">ME209: Thermodynamics</div>
                   <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
                     <div class="divider divider-start text-primary font-bold text-sm mt-0">Books</div>
                     <ul class="menu w-full p-0"><li><a href="./pdfs/me201_book.pdf" target="_blank">📘 Hibbeler Mechanics of Materials</a></li></ul>
@@ -158,7 +148,7 @@
                 
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="sem3-accordion" /> 
-                  <div class="collapse-title text-base sm:text-lg font-medium pr-10">EC101: Economics</div>
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">EC101: Economics</div>
                   <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
                     <div class="divider divider-start text-primary font-bold text-sm mt-0">Books</div>
                     <ul class="menu w-full p-0"><li><a href="./pdfs/me203_book.pdf" target="_blank">📘 Fox & McDonald</a></li></ul>
@@ -178,7 +168,7 @@
                 
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="sem3-accordion" /> 
-                  <div class="collapse-title text-base sm:text-lg font-medium pr-10">ME223: Solid Mechanics and Strength of Materials</div>
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">ME223: Solid Mechanics and Strength of Materials</div>
                   <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
                     <div class="divider divider-start text-primary font-bold text-sm mt-0">Books</div>
                     <ul class="menu w-full p-0"><li><a href="./pdfs/me209_book.pdf" target="_blank">📘 Cengel & Boles</a></li></ul>
@@ -198,7 +188,7 @@
 
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="sem3-accordion" /> 
-                  <div class="collapse-title text-base sm:text-lg font-medium pr-10">ME221: Structural Materials</div>
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">ME221: Structural Materials</div>
                   <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
                     <div class="divider divider-start text-primary font-bold text-sm mt-0">Books</div>
                     <ul class="menu w-full p-0"><li><a href="./pdfs/me219_book.pdf" target="_blank">📘 Probability & Stats for Engineers</a></li></ul>
@@ -218,7 +208,7 @@
 
                 <div class="collapse collapse-arrow join-item border border-base-300">
                   <input type="radio" name="sem3-accordion" /> 
-                  <div class="collapse-title text-base sm:text-lg font-medium pr-10">ME225: Numerical Analysis</div>
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">ME225: Numerical Analysis</div>
                   <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
                     <div class="divider divider-start text-primary font-bold text-sm mt-0">Books</div>
                     <ul class="menu w-full p-0"><li><a href="./pdfs/me207_book.pdf" target="_blank">📘 ND Bhatt Machine Drawing</a></li></ul>
@@ -256,12 +246,11 @@
           </div>
         </section>
 
-        <!-- SECTION 2: TECH -->
         <section id="cse" class="mb-12 md:mb-16 scroll-mt-24">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">💻 Tech & Logic</h2>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">💻 Tech & Logic</h2>
           <div class="card bg-neutral text-neutral-content shadow-xl">
             <div class="card-body p-5 md:p-8">
-              <h2 class="card-title text-secondary">CSE & Ary(ays)</h2>
+              <h2 class="card-title text-secondary break-words">CSE & Ary(ays)</h2>
               <p class="text-sm md:text-base text-neutral-content/80">Data structures, logic, and arrays. (Strictly no vectors or new/delete dynamic memory per command! Raw arrays only).</p>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="badge badge-outline text-neutral-content border-neutral-content">int arr[100]</span>
@@ -276,12 +265,11 @@
           </div>
         </section>
 
-        <!-- SECTION 3: FINANCE -->
         <section id="finance" class="mb-12 md:mb-16 scroll-mt-24">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">📈 Finance</h2>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">📈 Finance</h2>
           <div class="card bg-base-100 shadow-xl border border-base-200">
             <div class="card-body p-5 md:p-8">
-              <h2 class="card-title text-accent">Banking & Quant</h2>
+              <h2 class="card-title text-accent break-words">Banking & Quant</h2>
               <p class="text-sm md:text-base text-base-content/80">For when you realize engineering is cool, but high-frequency trading pays for the Mumbai rent.</p>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="badge badge-outline">Options Clearing</span>
@@ -296,12 +284,11 @@
           </div>
         </section>
 
-        <!-- SECTION 4: BOLLYWOOD -->
         <section id="bollywood" class="mb-12 md:mb-16 scroll-mt-24">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">🎬 Stress Relief</h2>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">🎬 Stress Relief</h2>
           <div class="card bg-neutral text-neutral-content shadow-xl">
             <div class="card-body p-5 md:p-8">
-              <h2 class="card-title text-info">Sara's Drama & Shetty's Gym</h2>
+              <h2 class="card-title text-info break-words">Sara's Drama & Shetty's Gym</h2>
               <p class="text-sm md:text-base text-neutral-content/80">Perfectly balanced weekend therapy. Half dramatic monologues, half intense weightlifting advice.</p>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="badge badge-ghost bg-base-300 text-base-content border-none">Knock Knock Jokes</span>
@@ -316,12 +303,11 @@
           </div>
         </section>
 
-        <!-- SECTION 5: SURVIVAL -->
         <section id="survival" class="mb-12 md:mb-16 scroll-mt-24">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">🌶️ Survival Mechanics</h2>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">🌶️ Survival Mechanics</h2>
           <div class="card bg-base-100 shadow-xl border border-base-200">
             <div class="card-body p-5 md:p-8">
-              <h2 class="card-title text-error">Chaat Chaupati Radar</h2>
+              <h2 class="card-title text-error break-words">Chaat Chaupati Radar</h2>
               <p class="text-sm md:text-base text-base-content/80">Live tracking of the best Sev Puri and midnight Maggi near the hostels.</p>
               <div class="flex flex-wrap gap-2 mt-4">
                 <span class="badge badge-outline border-error text-error">Extra Teekha</span>
@@ -338,7 +324,6 @@
 
       </main>
 
-      <!-- The Grand Footer -->
       <footer class="footer footer-center p-8 bg-base-200 text-base-content mt-auto">
         <aside>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-12 h-12 mb-2 fill-current">
@@ -354,7 +339,6 @@
 
     </div> 
 
-    <!-- Permanent Sidebar Overlay & Height Lock -->
     <div class="drawer-side z-40 h-[100dvh]">
       <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
       <ul class="menu p-4 w-72 h-full bg-base-200 text-base-content flex flex-col gap-2 border-r border-base-300 overflow-y-auto">
@@ -393,25 +377,13 @@
           Survival Mechanics
         </a></li>
 
-        <!-- Settings Group with Theme Dropdown -->
         <li class="menu-title mt-4"><span class="text-xs uppercase tracking-wider">Settings</span></li>
         <li>
-          <details>
-            <summary class="py-3 font-medium">
-              <svg width="18" height="18" class="inline-block fill-current opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
-                <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
-              </svg>
-              Theme Selection
-            </summary>
-            <ul class="ml-2 border-l border-base-300">
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Light" value="light" /></li>
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Dark" value="dark" /></li>
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro" value="retro" /></li>
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Cyberpunk" value="cyberpunk" /></li>
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Valentine" value="valentine" /></li>
-              <li><input type="radio" name="theme-dropdown" class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua" value="aqua" /></li>
-            </ul>
-          </details>
+          <button onclick="cycleTheme()" class="btn btn-ghost justify-start py-3 font-medium active:scale-95 transition-transform">
+              <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+            </svg>
+            <span id="theme-btn-text">Theme: Light</span>
+          </button>
         </li>
       </ul>
     </div>
@@ -419,11 +391,27 @@
 
   <script>
     function sendFeedback() {
-      const email = "ishan.sharma@iitb.ac.in";
+      const email = "25b2270@iitb.ac.in";
       const subject = encodeURIComponent("Feedback on Sem 3 Hub");
       const body = encodeURIComponent("Hey Ishan,\n\nI was looking at the Sem 3 portal and wanted to share some feedback...\n\n");
       
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+
+    // Theme Cycler Logic
+    const themes = ["light", "dark", "retro", "cyberpunk", "valentine", "aqua"];
+    let currentThemeIndex = 0;
+
+    function cycleTheme() {
+      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+      const newTheme = themes[currentThemeIndex];
+      
+      // Update HTML attribute
+      document.documentElement.setAttribute('data-theme', newTheme);
+      
+      // Update button text (Capitalize first letter)
+      const capitalizedTheme = newTheme.charAt(0).toUpperCase() + newTheme.slice(1);
+      document.getElementById('theme-btn-text').innerText = 'Theme: ' + capitalizedTheme;
     }
   </script>
 
