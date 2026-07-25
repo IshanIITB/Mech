@@ -18,6 +18,27 @@
       },
     }
   </script>
+  <style>
+    /* A4-optimized print styles */
+    @media print {
+      @page { size: A4 landscape; margin: 1cm; }
+      body { background-color: white !important; color: black !important; }
+      .drawer-content { overflow: visible !important; height: auto !important; }
+      .drawer-side, .hero, .btn, footer, .lg\\:hidden { display: none !important; }
+      .card { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+      .table { width: 100% !important; color: black !important; }
+      th, td { border: 1px solid #ddd !important; white-space: normal !important; }
+      .sticky { position: static !important; }
+    }
+    
+    /* Ensure table headers don't overlap awkwardly when scrolling */
+    .table-pin-rows thead tr {
+      z-index: 20;
+    }
+    .table-pin-cols tbody th {
+      z-index: 10;
+    }
+  </style>
 </head>
 <body class="transition-colors duration-300 bg-base-100 overflow-hidden">
 
@@ -33,7 +54,8 @@
           </label>
         </div>
         <div class="flex-1 px-2 mx-2 text-lg sm:text-xl font-bold text-center">Mech Hub</div>
-        <div class="flex-none w-12"></div> </div>
+        <div class="flex-none w-12"></div> 
+      </div>
 
       <main class="flex-grow p-4 sm:p-6 md:p-8 lg:p-10 max-w-7xl mx-auto w-full">
         
@@ -64,9 +86,9 @@
           </div>
         </section>
 
-        <div class="divider my-10 md:my-16 text-lg sm:text-2xl md:text-3xl font-bold text-primary text-center px-2 whitespace-nowrap">
-  The Grand Unified Portal
-</div>
+        <div class="divider my-10 md:my-16 text-lg sm:text-2xl md:text-3xl font-bold text-primary text-center px-2 whitespace-normal break-words">
+          The Grand Unified Portal
+        </div>
         
         <div class="hero bg-gradient-to-br from-warning to-error text-warning-content rounded-2xl shadow-xl mb-12 md:mb-16 overflow-hidden">
           <div class="hero-content text-center py-10 md:py-12 px-4 w-full">
@@ -77,6 +99,151 @@
           </div>
         </div>
 
+        <!-- Timetable Section -->
+        <section id="timetable" class="mb-12 md:mb-16 scroll-mt-24">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold flex items-center gap-2 break-words">
+              📅 Weekly Timetable
+            </h2>
+            <button onclick="window.print()" class="btn btn-sm btn-outline btn-primary shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M6.728 9.75h10.544M6.728 14.25h10.544M4.5 21V9.75A1.125 1.125 0 0 1 5.625 8.625h12.75A1.125 1.125 0 0 1 19.5 9.75V21M4.5 21a2.25 2.25 0 0 0 2.25-2.25M4.5 21h15M19.5 21a2.25 2.25 0 0 0-2.25-2.25M4.5 6.375V4.125C4.5 3.504 5.004 3 5.625 3h12.75c.621 0 1.125.504 1.125 1.125v2.25" /></svg>
+              Print Schedule
+            </button>
+          </div>
+          <div class="card bg-base-100 shadow-xl border border-base-200">
+            <div class="card-body p-0">
+              <div class="overflow-x-auto w-full">
+                <table class="table table-sm sm:table-md table-zebra table-pin-rows table-pin-cols w-full min-w-max text-center">
+                  <thead>
+                    <tr class="bg-base-300 text-base-content whitespace-nowrap">
+                      <th class="bg-base-300 text-left font-bold z-20">Day</th>
+                      <th>08:00 - 09:25</th>
+                      <th>09:30 - 10:25</th>
+                      <th>10:35 - 11:30</th>
+                      <th>11:05 - 12:30</th>
+                      <th>11:35 - 12:30</th>
+                      <th>14:00 - 15:25</th>
+                      <th>15:30 - 16:55</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Monday -->
+                    <tr>
+                      <th class="bg-base-200 text-left font-semibold">Mon</th>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 221</div>
+                        <div class="text-xs opacity-75">Date</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 223</div>
+                        <div class="text-xs opacity-75">Ganpule</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 225</div>
+                        <div class="text-xs opacity-75">Kulkarni</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-secondary font-bold mb-1">EC 101</div>
+                        <div class="text-xs opacity-75">Padhi/Chundakkadan</div>
+                        <div class="text-[10px] opacity-60 mt-1">LA 001</div>
+                      </td>
+                    </tr>
+                    <!-- Tuesday -->
+                    <tr>
+                      <th class="bg-base-200 text-left font-semibold">Tue</th>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 209</div>
+                        <div class="text-xs opacity-75">Bansal</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 221</div>
+                        <div class="text-xs opacity-75">Date</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 223</div>
+                        <div class="text-xs opacity-75">Ganpule</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 225</div>
+                        <div class="text-xs opacity-75">Kulkarni</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-accent font-bold mb-1">CS 771</div>
+                        <div class="text-xs opacity-75">Pandya</div>
+                        <div class="text-[10px] opacity-60 mt-1">CC 105</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                    </tr>
+                    <!-- Wednesday -->
+                    <tr>
+                      <th class="bg-base-200 text-left font-semibold">Wed</th>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-info font-bold mb-1">DH 302</div>
+                        <div class="text-xs opacity-75">Addya / Jadhav</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                    </tr>
+                    <!-- Thursday -->
+                    <tr>
+                      <th class="bg-base-200 text-left font-semibold">Thu</th>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 209</div>
+                        <div class="text-xs opacity-75">Bansal</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 221</div>
+                        <div class="text-xs opacity-75">Date</div>
+                      </td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 223</div>
+                        <div class="text-xs opacity-75">Ganpule</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-primary font-bold mb-1">ME 225</div>
+                        <div class="text-xs opacity-75">Kulkarni</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-secondary font-bold mb-1">EC 101</div>
+                        <div class="text-xs opacity-75">Padhi/Chundakkadan</div>
+                        <div class="text-[10px] opacity-60 mt-1">LA 001</div>
+                      </td>
+                    </tr>
+                    <!-- Friday -->
+                    <tr>
+                      <th class="bg-base-200 text-left font-semibold">Fri</th>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-info font-bold mb-1">DH 302</div>
+                        <div class="text-xs opacity-75">Addya / Jadhav</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                      <td>
+                        <div class="badge badge-accent font-bold mb-1">CS 771</div>
+                        <div class="text-xs opacity-75">Pandya</div>
+                        <div class="text-[10px] opacity-60 mt-1">CC 105</div>
+                      </td>
+                      <td class="text-base-content/30">-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <section id="mech-resources" class="mb-12 md:mb-16 scroll-mt-24">
           <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2 break-words text-balance">
             ⚙️ Mech Resources
@@ -226,6 +393,34 @@
                   </div>
                 </div>
 
+                <!-- CS771 -->
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="sem3-accordion" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">CS771: Machine Learning</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-primary font-bold text-sm mt-0">Instructor</div>
+                    <p class="text-sm opacity-80 mb-2">Paritosh K. Pandya (Venue: CC 105)</p>
+                    <div class="divider divider-start text-primary font-bold text-sm">Resources</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="#cse">💻 Check Tech & Logic Module</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- DH302 -->
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="sem3-accordion" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">DH302: Design Course</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-primary font-bold text-sm mt-0">Instructors</div>
+                    <p class="text-sm opacity-80 mb-2">Kalyani Addya & Kshitij Jadhav</p>
+                    <div class="divider divider-start text-primary font-bold text-sm">Resources</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="#timetable">📅 View Timetable Slots</a></li>
+                    </ul>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -356,6 +551,10 @@
         </a></li>
 
         <li class="menu-title mt-4"><span class="text-xs uppercase tracking-wider">Modules</span></li>
+        <li><a href="#timetable" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Timetable
+        </a></li>
         <li><a href="#mech-resources" class="py-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           Mech Resources
@@ -380,8 +579,9 @@
         <li class="menu-title mt-4"><span class="text-xs uppercase tracking-wider">Settings</span></li>
         <li>
           <button onclick="cycleTheme()" class="btn btn-ghost justify-start py-3 font-medium active:scale-95 transition-transform">
-              <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
-            </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 2048 2048" class="fill-current">
+                <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+              </svg>
             <span id="theme-btn-text">Theme: Light</span>
           </button>
         </li>
@@ -398,18 +598,13 @@
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
     }
 
-    // Theme Cycler Logic
     const themes = ["light", "dark", "retro", "cyberpunk", "valentine", "aqua"];
     let currentThemeIndex = 0;
 
     function cycleTheme() {
       currentThemeIndex = (currentThemeIndex + 1) % themes.length;
       const newTheme = themes[currentThemeIndex];
-      
-      // Update HTML attribute
       document.documentElement.setAttribute('data-theme', newTheme);
-      
-      // Update button text (Capitalize first letter)
       const capitalizedTheme = newTheme.charAt(0).toUpperCase() + newTheme.slice(1);
       document.getElementById('theme-btn-text').innerText = 'Theme: ' + capitalizedTheme;
     }
